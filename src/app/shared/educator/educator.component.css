@@ -1,0 +1,22 @@
+.h3, h3 {
+    background-color: #dee2e6;
+    font-family: Georgia;
+    color:royalblue;
+    
+}
+.h1, h1 {
+    font-size: 2.5rem;
+    color: #2185d0;
+}
+::after, ::before {
+    box-sizing: border-box;
+    background-color: skyblue;
+}
+
+img{
+    max-width: -webkit-fill-available;
+}
+
+.row{
+    background-color: antiquewhite;
+}

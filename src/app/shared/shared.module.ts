@@ -20,12 +20,14 @@ import { MaterialModule } from '../material-module';
 import {MatNativeDateModule} from '@angular/material';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EducatorComponent } from './educator/educator.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
+    EducatorComponent,
    
   ],
 
