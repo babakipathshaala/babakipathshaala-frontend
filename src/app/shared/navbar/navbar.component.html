@@ -1,1 +1,91 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark pathsaala-navbar w-100" style="position: sticky; top: 0; z-index: 2;">
+
+        <a class="navbar-brand" href="#">
+            <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            <span class="ml-2 mb-0 pb-0" style="color: linen; font-size: large;">BabaKiPathsaala <p style="margin-left: 37px; color: orange; font-family: cursive; font-size: x-small; margin-top: -10px;">-Enhanced Humankind</p></span>
+        </a>
+        
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="col-md-5 d-flex justify-content-center align-self-center ">
+            <div class="input-group searchForm">
+                <!-- <input type="text" class="form-control " style=" height: 4vh" placeholder="Search BabaKiPathsaala"
+                    [(ngModel)]="searchTerm" aria-label="Recipient's username"
+                    (input)="searchedText($event.target.value)" aria-describedby="basic-addon2"> -->
+
+                <input type="text" class="form-control " style=" height: 4vh" placeholder="Search BabaKiPathsaala"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <span class="input-group-text " disabled style=" height: 4vh" id="basic-addon2"><i
+                            class="fa fa-search" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <ul class="navbar-nav col-md-7">
+            
+
+            <li class="nav-item">
+                <button type="button" class="nav-link btn-home" style="color: white; height: 5vh; align-items: center;">About Us</button>
+            </li>
+
+            <li class="nav-item dropdown">
+                <button class="nav-link dropdown-toggle course" id="navbarDropdown" style="color: white; height: 5vh" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Courses
+                  </button>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Academics</a>
+                    <a class="dropdown-item" href="#">Extra Curricular</a>
+                    <a class="dropdown-item" href="#">Entrance Exam/Competitive Exam</a>
+                    <a class="dropdown-item" href="#">Professional Courses</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <button type="button" class="btn-tutor" style="color: white; height: 5vh;">Tutors</button>
+            </li>
+
+            <li class="nav-item">
+                <button type="button" class="btn-liveCourse" style="color: white; height: 5vh;">Live Courses</button>
+            </li>
+
+            <li class="nav-item" *ngIf="userInfoToken == false">
+                <!-- <button type="button" class="btn-register" style=" color: white; height: 5vh;"
+                (click)="openLogin(login)">Login/JoinNow</button> -->
+
+                <button type="button" class="btn-register" style=" color: white; height: 5vh;"
+                (click)="goToLogin()">Login/JoinNow</button>
+            </li>
+
+            <li class="nav-item" *ngIf="userInfoToken == true && userInfo">
+
+                <button type="button" class="btn-name"
+                    style="color: white; height: 5vh; text-transform: capitalize; align-items: center;">
+                    <img class="ui avatar image" src="./../../../assets/user-placeholder.jpg">
+                    <span>{{userInfo.fullName}}</span>
+                    <!-- to be changed with first name -->
+                </button>
+            </li>
+
+            <li class="nav-item">
+
+                <div *ngIf="userInfoToken == true && userInfo" class="ui right pointing dropdown accountMenu"
+                    suiDropdown autoClose="outsideClick">
+                    <div class="text"><i class="fa fa-cogs"></i></div>
+                    <div class="menu" suiDropdownMenu>
+                        <div class="item"><i class="wrench icon"></i>settings</div>
+                        <div class="item"><i class="sign-out icon"></i>Log out</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+</nav>

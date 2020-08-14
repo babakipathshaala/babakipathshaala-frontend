@@ -26,14 +26,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     NavbarComponent,
-   
   ],
 
   exports: [
     NavbarComponent,
   ],
   
-  imports: [
+  imports: [   
     CommonModule,
     FormsModule,
     NgbModule,

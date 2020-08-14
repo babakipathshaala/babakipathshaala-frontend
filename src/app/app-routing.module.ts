@@ -6,7 +6,7 @@ import { SigninComponent } from './signin/signin.component';
 
 // to be changed later after testing.
 const routes: Routes = [
-  { path: 'navbar', component: NavbarComponent},
+  // { path: 'navbar', component: NavbarComponent},
   { path: 'signin', component: SigninComponent},
   { path: 'home', component: HomeComponent},
   { path: '',  redirectTo: '/home', pathMatch: 'full' },
