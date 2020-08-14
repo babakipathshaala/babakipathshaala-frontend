@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 // import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material';
-import { SuiModule} from 'ng2-semantic-ui';
+// import { SuiModule} from 'ng2-semantic-ui';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ToastrModule } from 'ng6-toastr-notifications';
 import { MaterialModule } from './material-module';
@@ -37,7 +37,7 @@ import { UserService } from './services/user.service';
     MaterialModule,
     MatNativeDateModule,
     HttpClientModule,
-    SuiModule,
+    // SuiModule,
     TooltipModule.forRoot(),
     ToastrModule.forRoot()
   ],

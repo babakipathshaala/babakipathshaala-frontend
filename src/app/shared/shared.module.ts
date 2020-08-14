@@ -13,7 +13,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ng6-toastr-notifications';
-import { SuiModule} from 'ng2-semantic-ui';
+// import { SuiModule} from 'ng2-semantic-ui';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../material-module';
@@ -39,7 +39,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    SuiModule,
+    // SuiModule,
     MaterialModule,
     TextareaAutosizeModule,
     MatNativeDateModule,
