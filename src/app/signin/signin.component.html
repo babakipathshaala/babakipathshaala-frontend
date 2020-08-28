@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<div class="container-fluid pt-5">
+<!-- <div class="container-fluid pt-5">
 
     <h1 class="ui center aligned huge header header1 ml-5 mr-5 ">
         <div class="content">
@@ -192,6 +192,217 @@
             </div>
         </div>
         <div class="ui vertical divider " *ngIf="!showSignup" style="color: white;">
+            Or
+        </div>
+    </div>
+</div> -->
+
+<div class="container-fluid pt-5">
+
+    <h1 class="ui center aligned huge header header1 ml-5 mr-5 ">
+        <img src="assets/register.jpg">
+        <div class="content" style="color: white;">
+            Welcome to BabakiPathShaala
+            <div class="sub header" style="color: white;">Login or Signup to your account</div>
+        </div>
+    </h1>
+    <div class="ui placeholder segment page1 ml-5 mr-5">
+        <div class="ui two column very relaxed stackable grid">
+            <div class="column" *ngIf="!showSignup">
+                <form class="ui form" #signInForm="ngForm" (ngSubmit)="signInFunction(); clearSignInFields()">
+
+                    <input type="text" autofocus="autofocus" style="display:none" />
+
+                    <div class="field">
+                        <!-- <label style="color: white;">Email</label> -->
+                        <div class="ui left icon input">
+                            <input type="text" placeholder="Email" class="form-control" [(ngModel)]="userEmail"
+                                #email="ngModel" name="userEmail" required>
+                            <i class="user icon"></i>
+                        </div>
+                        <div [hidden]="email.valid || email.pristine" class="error-message">
+                            email is required.
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <!-- <label style="color: white;">Password</label> -->
+                        <div class="ui left icon action input" id="password">
+                            <input [type]="password1" placeholder="Password" class="form-control"
+                                [(ngModel)]="userPassword" #password="ngModel" name="userPassword"
+                                (keydown.space)="$event.preventDefault();" required>
+                            <i class="lock icon"></i>
+                            <button type="button" class="ui icon button pt-0 pb-0" style="background-color: lightgrey;"
+                                (click)="showOrHidePassword()">
+                                <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+                                <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="links pt-3">
+                    <button class="ui blue submit button" (click)="signInFunction(); clearSignInFields()"
+                        [disabled]="!signInForm.form.valid">Login</button>
+                    <a class="link pl-2" style="color: #2183D0; cursor: pointer;"
+                        (click)="open(forgotPasswordModal)">Forgot password?</a>
+                </div>
+
+            </div>
+
+            <div class="column coverImage d-flex justify-content-center" *ngIf="showSignup">
+                <img class="img-fluid" alt="Responsive image" src="assets/register.jpg">
+            </div>
+
+            <div class="middle aligned column">
+                <div class="ui header" *ngIf="showSignup == false" style="color: darkgray;">
+                    New to us.
+                </div>
+                <div class="ui blue big button" *ngIf="showSignup == false"
+                    (click)="showSignup=!showSignup; clearSignInFields();">
+                    <i class="signup icon"></i>
+                    Sign Up
+                </div>
+
+
+                <div *ngIf="showSignup">
+                    <form class="ui form" [formGroup]="signUpForm">
+
+                        <div class="field">
+                            <!-- <label style="color: white;">FullName</label> -->
+                            <div class="ui left icon input">
+                                <input id="fullName" type="text" name="full-name" placeholder="Full Name"
+                                    class="form-control" formControlName="fullName" required>
+                                <i class="user icon"></i>
+                            </div>
+
+                            <div class="error-messages">
+                                <ng-container *ngFor="let error of error_messages.fullName">
+                                    <div class="error-message"
+                                        *ngIf="signUpForm.get('fullName').hasError(error.type) && (signUpForm.get('fullName').dirty || signUpForm.get('fullName').touched)">
+                                        {{ error.message }}
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <!-- <label style="color: white;">Phone Number</label> -->
+                            <div class="ui left icon input">
+                                <input id="phoneNumber" type="text" name="phoneNumber" placeholder="Phone Number"
+                                    class="form-control" formControlName="phoneNumber" required>
+                                <i class="mobile alternate icon"></i>
+                            </div>
+
+                            <div class="error-messages">
+                                <ng-container *ngFor="let error of error_messages.phoneNumber">
+                                    <div class="error-message"
+                                        *ngIf="signUpForm.get('phoneNumber').hasError(error.type) && (signUpForm.get('phoneNumber').dirty || signUpForm.get('phoneNumber').touched)">
+                                        {{ error.message }}
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <!-- <label style="color: white;">Email</label> -->
+                            <div class="ui left icon input">
+                                <input id="email" type="text" placeholder="Email" class="form-control"
+                                    formControlName="email" name="email" required>
+                                <i class="envelope outline icon"></i>
+                            </div>
+                            <div class="error-messages">
+                                <ng-container *ngFor="let error of error_messages.email">
+                                    <div class="error-message"
+                                        *ngIf="signUpForm.get('email').hasError(error.type) && (signUpForm.get('email').dirty || signUpForm.get('email').touched)">
+                                        {{ error.message }}
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <!-- <label style="color: white;">Password</label> -->
+                            <div class="ui left icon action input">
+                                <input id="password" [type]="password2" placeholder="Password" class="form-control"
+                                    formControlName="password" name="pass" (keydown.space)="$event.preventDefault();"
+                                    required>
+                                <i class="lock icon"></i>
+                                <button type="button" class="ui icon button pt-0 pb-0"
+                                    style="background-color: lightgrey;" (click)="showOrHideSignUpPassword()">
+                                    <i class="fa fa-eye" aria-hidden="true" *ngIf="!show1"></i>
+                                    <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show1"></i>
+                                </button>
+                            </div>
+                            <div class="error-messages">
+                                <ng-container *ngFor="let error of error_messages.password">
+                                    <div class="error-message"
+                                        *ngIf="signUpForm.get('password').hasError(error.type) && (signUpForm.get('password').dirty || signUpForm.get('password').touched)">
+                                        {{ error.message }}
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <!-- <label style="color: white;">Status</label> -->
+                                
+                                <div class="ui left icon input" id="statusId">
+                                    <select class="mdb-select md-form" id="status-select" formControlName="status">
+                                        <option value="" disabled selected>Choose your status</option>
+                                        <option *ngFor="let status of statusValue" [ngValue]="status"
+                                            (change)="changeStatus($event)">{{status}}
+                                        </option>
+                                    </select>
+                                
+                                <i class="graduation cap icon"></i>
+
+                            </div>
+                            <div class="error-messages">
+                                <ng-container *ngFor="let error of error_messages.status">
+                                    <div class="error-message"
+                                        *ngIf="signUpForm.get('status').hasError(error.type) && (signUpForm.get('status').dirty || signUpForm.get('status').touched)">
+                                        {{ error.message }}
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <!-- <label style="color: white;">Age</label> -->
+                            <div class="ui left icon input">
+                                <input id="age" type="number" placeholder="Age" class="form-control"
+                                    formControlName="age" name="age" required>
+                                <i class="birthday cake icon"></i>
+                            </div>
+                            <div class="error-messages">
+                                <ng-container *ngFor="let error of error_messages.age">
+                                    <div class="error-message"
+                                        *ngIf="signUpForm.get('age').hasError(error.type) && (signUpForm.get('age').dirty || signUpForm.get('age').touched)">
+                                        {{ error.message }}
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <div class="tnc-div">
+                            By creating this account, you are agree to our
+                            <a href="#" target="_blank" style="cursor: pointer; color: #2183D0;">Terms and Condition </a>
+                            &
+                            <a href="#" target="_blank" style="cursor: pointer; color: #2183D0;">Privacy Policy</a>
+                          </div>
+                        <button class="ui blue submit button" style="margin-top: 0.7em;" [disabled]="!signUpForm.valid"
+                            (click)="showSignup=!showSignup ; signUpFunction(); clearSignUpFields();">Register</button>
+
+                    </form>
+                    <div class="ui bottom pt-5" style="color: dimgrey;    padding-top: 1.5rem!important;">
+                        Already signed up? <a style="color: #2183D0; cursor: pointer;"
+                            (click)="showSignup=!showSignup; clearSignUpFields();">Login here</a> instead.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui vertical divider " *ngIf="!showSignup" style="color: darkgray;">
             Or
         </div>
     </div>

@@ -5,14 +5,16 @@ body{
     /* justify-content: center; */
   }
   .container-fluid{
-      background-color: rgb(116, 112, 112);
-      background: linear-gradient(180deg, rgb(188, 190, 190) 15%, rgb(201, 201, 206) 100%);
+       background-color: rgb(0, 0, 0);
+      background: linear-gradient(180deg, rgb(15, 15, 15) 15%, rgb(24, 24, 24) 100%);
+      /* background-color: #263131; */
+      /* background: linear-gradient(180deg, #9dabab 15%, #7b8a8a 100%); */
       min-height: 100vh;
   }
   
   .page1{
-      background-color: rgba(0,0,0);
-      background: linear-gradient(180deg, rgb(121, 122, 122) 15%, rgb(2, 2, 8) 100%);
+      background-color: whitesmoke;
+      /* background: linear-gradient(180deg, rgb(121, 122, 122) 15%, rgb(2, 2, 8) 100%); */
       box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
@@ -48,12 +50,32 @@ body{
       
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   } */
+
+  .ui.form .field .ui.input input {
+    border-color: darkslateblue;
+  }
+
+  .ui.form select {
+    border-color: darkslateblue;
+  }
+
+  .tnc-div{
+    font-size: smaller;
+  }
+
+  select { text-indent: 1.2em; }
   
   @media (max-width: 767px) {
     .divider{
       display: none;
     }
-    div.column .coverImage{
+    .coverImage img{
       display: none;
+    }
+  }
+
+  @media (max-width: 412px){
+    #password{
+      width: 80%; 
     }
   }
