@@ -11,8 +11,9 @@ body{
   }
   
   .page1{
-      background-color: rgba(0,0,0);
-      background: linear-gradient(180deg, rgb(121, 122, 122) 15%, rgb(2, 2, 8) 100%);
+      /* background-color: rgba(0,0,0); */
+      background-color: var(--light);
+      /* background: linear-gradient(180deg, rgb(121, 122, 122) 15%, rgb(2, 2, 8) 100%); */
       box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   

@@ -17,7 +17,7 @@
                     <input type="text" autofocus="autofocus" style="display:none" />
 
                     <div class="field">
-                        <label style="color: white;">Email</label>
+                        <!-- <label style="color: white;">Email</label> -->
                         <div class="ui left icon input">
                             <input type="text" placeholder="Email" class="form-control" [(ngModel)]="userEmail"
                                 #email="ngModel" name="userEmail" required>
@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="field">
-                        <label style="color: white;">Password</label>
+                        <!-- <label style="color: white;">Password</label> -->
                         <div class="ui left icon action input">
                             <input [type]="password1" placeholder="Password" class="form-control"
                                 [(ngModel)]="userPassword" #password="ngModel" name="userPassword" (keydown.space)="$event.preventDefault();" required>
@@ -71,7 +71,7 @@
                     <form class="ui form" [formGroup]="signUpForm">
 
                         <div class="field">
-                            <label style="color: white;">FullName</label>
+                            <!-- <label style="color: white;">FullName</label> -->
                             <div class="ui left icon input">
                                 <input id="fullName" type="text" name="full-name" placeholder="Full Name"
                                     class="form-control" formControlName="fullName" required>
@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="field">
-                            <label style="color: white;">Phone Number</label>
+                            <!-- <label style="color: white;">Phone Number</label> -->
                             <div class="ui left icon input">
                                 <input id="phoneNumber" type="text" name="phoneNumber" placeholder="Phone Number"
                                     class="form-control" formControlName="phoneNumber" required>
@@ -107,7 +107,7 @@
                         </div>
 
                         <div class="field">
-                            <label style="color: white;">Email</label>
+                            <!-- <label style="color: white;">Email</label> -->
                             <div class="ui left icon input">
                                 <input id="email" type="text" placeholder="Email" class="form-control"
                                     formControlName="email" name="email" required>
@@ -124,7 +124,7 @@
                         </div>
 
                         <div class="field">
-                            <label style="color: white;">Password</label>
+                            <!-- <label style="color: white;">Password</label> -->
                             <div class="ui left icon action input">
                                 <input id="password" [type]="password2" placeholder="Password" class="form-control"
                                     formControlName="password" name="pass" (keydown.space)="$event.preventDefault();" required>
@@ -146,14 +146,14 @@
                         </div>
 
                         <div class="field">
-                            <label style="color: white;">Status</label>
-                            <div class="ui left icon input">
-                                <select class="ui fluid dropdown" id="status-select" formControlName="status">
-                                    <option [ngValue]="null" disabled selected hidden>Select your status</option>
+                            <!-- <label style="color: white;">Status</label> -->
+                            <div class="ui floating drop">
+                                <select class="custom-select d-block w-100" id="status-select" formControlName="status" placeholder="d.ff">
+                                    <option hidden value="" disabled selected style="color:lightslategray;"><p>Choose your status</p></option>
                                     <option *ngFor="let status of statusValue" [ngValue]="status" (change)="changeStatus($event)">{{status}}
                                     </option>
                                 </select>
-                                
+                                <i class="graduation cap icon"></i>
                             </div>
                             <div class="error-messages">
                                 <ng-container *ngFor="let error of error_messages.status">
@@ -166,7 +166,7 @@
                         </div>
 
                         <div class="field">
-                            <label style="color: white;">Age</label>
+                            <!-- <label style="color: white;">Age</label> -->
                             <div class="ui left icon input">
                                 <input id="age" type="number" placeholder="Age" class="form-control"
                                     formControlName="age" name="age" required>
@@ -186,7 +186,7 @@
 
                     </form>
                     <div class="ui bottom pt-5" style="color: white;">
-                        Already signed up? <a style="color: rgb(95, 152, 238); cursor: pointer;"
+                        Already signed up? <a style="color: rgb(195, 217, 250); cursor: pointer;"
                             (click)="showSignup=!showSignup; clearSignUpFields();">Login here</a> instead.
                     </div>
                 </div>
@@ -233,3 +233,4 @@
     </div>
 
 </ng-template>
++
