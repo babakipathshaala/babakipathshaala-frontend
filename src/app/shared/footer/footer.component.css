@@ -1,0 +1,52 @@
+#footerDesign{
+    background-color: #00254a;
+}
+
+#footerDesign
+{
+    text-align:center;
+}
+.commentSection, .row
+{
+    display:inline;
+}
+
+.list-inline-item{
+    margin-right: 3rem;
+    color: antiquewhite;
+}
+
+ .page-footer .container-fluid #socialIcons #fabIcon a {
+    color: #3b5998;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50%;
+}
+
+#twitterIcon a {
+    color: #00acee;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50%;
+}
+
+.page-footer .container-fluid #socialIcons #gIcon a {
+    color: #db4a39;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50%;
+}
+
+#ytIcon a {
+    color: #FF0000;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50%;
+}
+
+#instaIcon a {
+    color: #E1306C;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50%;
+}

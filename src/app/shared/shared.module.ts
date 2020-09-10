@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -20,16 +21,20 @@ import { MaterialModule } from '../material-module';
 import {MatNativeDateModule} from '@angular/material';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
+    FooterComponent,
+    AboutusComponent,
   ],
 
   exports: [
     NavbarComponent,
+    FooterComponent,
+    AboutusComponent,
   ],
   
   imports: [   

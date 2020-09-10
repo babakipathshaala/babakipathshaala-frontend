@@ -317,5 +317,13 @@ export class SigninComponent implements OnInit {
 
   }
 
+  public termsConditionPage(): any {
+    this.router.navigate(['/privacy-terms']);
+  }
+
+  public privacyPage(): any {
+    this.router.navigate(['/privacy-terms']);
+  }
+
 }
 

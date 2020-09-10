@@ -18,12 +18,18 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { UserService } from './services/user.service';
+import { PrivacyTermsComponent } from './privacy-terms/privacy-terms.component';
+// import { FooterComponent } from './shared/footer/footer.component';
+// import { AboutusComponent } from './shared/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SigninComponent
+    SigninComponent,
+    PrivacyTermsComponent,
+    // FooterComponent,
+    // AboutusComponent,
   ],
   imports: [
     BrowserModule,

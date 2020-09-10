@@ -55,4 +55,9 @@ export class NavbarComponent implements OnInit, OnChanges {
 
   } // end logout
 
+  //open AboutUs
+  public goToAboutUs(): any {
+    this.router.navigate(['/aboutus']);
+  }
+
 }

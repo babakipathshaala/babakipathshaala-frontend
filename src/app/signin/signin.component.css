@@ -5,8 +5,8 @@ body{
     /* justify-content: center; */
   }
   .container-fluid{
-       background-color: rgb(0, 0, 0);
-      background: linear-gradient(180deg, rgb(15, 15, 15) 15%, rgb(24, 24, 24) 100%);
+       background-color: #e0e9f1;
+     /* background: linear-gradient(180deg, rgb(15, 15, 15) 15%, rgb(24, 24, 24) 100%);*/
       /* background-color: #263131; */
       /* background: linear-gradient(180deg, #9dabab 15%, #7b8a8a 100%); */
       min-height: 100vh;
@@ -52,11 +52,11 @@ body{
   } */
 
   .ui.form .field .ui.input input {
-    border-color: darkslateblue;
+    border-color: darkgrey;
   }
 
   .ui.form select {
-    border-color: darkslateblue;
+    border-color: darkgrey;
   }
 
   .tnc-div{

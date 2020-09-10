@@ -1,0 +1,11 @@
+.contnt{
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    float: left;
+    /* font-family: arial, Times, "Times New Roman", serif font-weight:normal;
+    font-size: 12pt;
+    color: #000; */
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 15px;
+}

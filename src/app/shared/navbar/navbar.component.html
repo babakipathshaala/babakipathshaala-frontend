@@ -1,45 +1,65 @@
 <nav class="navbar navbar-expand-lg navbar-dark pathsaala-navbar w-100" style="position: sticky; top: 0; z-index: 2;">
 
-        <a class="navbar-brand" href="#">
-            <img src="assets/register.jpg" width="34" height="34" class="d-inline-block align-top" alt="" loading="lazy">
-            <span class="ml-2 mb-0 pb-0" style="color: linen; font-size: large;">BabaKiPathshaala <p style="margin-left: 41px; color: orange; font-family: cursive; font-size: x-small; margin-top: -10px;">-Enhancing Intelligence of Humankind</p></span>
-        </a>
-        
+    <a class="navbar-brand" href="#">
+        <img src="assets/register.jpg" width="34" height="34" class="d-inline-block align-top" alt="" loading="lazy">
+        <span class="ml-2 mb-0 pb-0" style="color: linen; font-size: large;">BabaKiPathshaala <p
+                style="margin-left: 41px; color: orange; font-family: cursive; font-size: x-small; margin-top: -10px;">
+                -Enhancing Intelligence of Humankind</p></span>
+    </a>
 
+    <div class="col-sm-4 col-md-3 d-flex justify-content-center align-self-center ">
+        <div class="input-group searchForm">
+            <input type="text" class="form-control " style=" height: 4vh" placeholder="Search BabaKiPathsaala"
+                aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <span class="input-group-text " disabled style=" height: 4vh" id="basic-addon2"><i class="fa fa-search"
+                        aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="col-md-5 d-flex justify-content-center align-self-center ">
-            <div class="input-group searchForm">
-                <!-- <input type="text" class="form-control " style=" height: 4vh" placeholder="Search BabaKiPathsaala"
+
+    <!-- <input type="text" class="form-control " style=" height: 4vh" placeholder="Search BabaKiPathsaala"
+            [(ngModel)]="searchTerm" aria-label="Recipient's username"
+            (input)="searchedText($event.target.value)" aria-describedby="basic-addon2"> -->
+
+    
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <!-- <div class="col-md-5 d-flex justify-content-center align-self-center ">
+                <div class="input-group searchForm"> -->
+        <!-- <input type="text" class="form-control " style=" height: 4vh" placeholder="Search BabaKiPathsaala"
                     [(ngModel)]="searchTerm" aria-label="Recipient's username"
                     (input)="searchedText($event.target.value)" aria-describedby="basic-addon2"> -->
 
-                <input type="text" class="form-control " style=" height: 4vh" placeholder="Search BabaKiPathsaala"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <span class="input-group-text " disabled style=" height: 4vh" id="basic-addon2"><i
-                            class="fa fa-search" aria-hidden="true"></i>
-                    </span>
+        <!-- <input type="text" class="form-control " style=" height: 4vh" placeholder="Search BabaKiPathsaala"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text " disabled style=" height: 4vh" id="basic-addon2"><i
+                                class="fa fa-search" aria-hidden="true"></i>
+                        </span>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
 
-        <ul class="navbar-nav col-md-7">
-            
+        <ul class="navbar-nav col-12">
+
 
             <li class="nav-item">
-                <button type="button" class="nav-link btn-home" style="color: white; height: 5vh; align-items: center;">About Us</button>
+                <button type="button" class="nav-link btn-home"
+                    style="color: white; height: 5vh; align-items: center;"
+                    (click)="goToAboutUs()">About Us</button>
             </li>
 
             <li class="nav-item dropdown">
-                <button class="nav-link dropdown-toggle course" id="navbarDropdown" style="color: white; height: 5vh" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="nav-link dropdown-toggle course" id="navbarDropdown" style="color: white; height: 5vh"
+                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Courses
-                  </button>
+                </button>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Academics</a>
                     <a class="dropdown-item" href="#">Extra Curricular</a>
@@ -54,7 +74,8 @@
             </li>
 
             <li class="nav-item">
-                <button type="button" class="btn-liveCourse" style="color: white; height: 5vh;">Live Courses</button>
+                <button type="button" class="btn-liveCourse" style="color: white; height: 5vh;">Live
+                    Courses</button>
             </li>
 
             <li class="nav-item" *ngIf="userInfoToken == false">
@@ -62,7 +83,7 @@
                 (click)="openLogin(login)">Login/JoinNow</button> -->
 
                 <button type="button" class="btn-register" style=" color: white; height: 5vh;"
-                (click)="goToLogin()">Login/JoinNow</button>
+                    (click)="goToLogin()">Login/JoinNow</button>
             </li>
 
             <li class="nav-item" *ngIf="userInfoToken == true && userInfo">
@@ -88,5 +109,5 @@
             </li>
         </ul>
     </div>
-    
+
 </nav>
